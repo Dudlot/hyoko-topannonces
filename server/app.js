@@ -40,7 +40,7 @@ app.get("/", cors({ origin: ["http://localhost:8000", "http://localhost:5173"],
 	});
 
 	// Récupération des données en json sur navigateur
-	dbConnexion.query("SELECT * FROM topa_listing", (err, rows, fields) => {
+	dbConnexion.query("SELECT * FROM topa_posts", (err, rows, fields) => {
 	    if(err) throw err;
 	    res.json(rows)
 	});
@@ -49,7 +49,7 @@ app.get("/", cors({ origin: ["http://localhost:8000", "http://localhost:5173"],
     dbConnexion.end();
 });
 
-
+app.use(cors());
 
 // Accueillir des requêtes côté client (HTTP) sur le port 8000
 app.listen(process.env.PORT, () => {
