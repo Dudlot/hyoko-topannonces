@@ -45,27 +45,29 @@ class Header extends Component {
                                 <SearchBar />
                             </li>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35.713" height="35.74" viewBox="0 0 35.713 35.74" className='svg-icon'>
-                                    <defs>
-                                        <linearGradient id="linear-gradient" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
-                                        <stop offset="0" stop-color="#00c4ff"/>
-                                        <stop offset="1" stop-color="#1800ff"/>
-                                        </linearGradient>
-                                        <linearGradient id="linear-gradient-2" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
-                                        <stop offset="0" stop-color="#099aff"/>
-                                        <stop offset="0.15" stop-color="#0995ff"/>
-                                        <stop offset="0.33" stop-color="#0a87ff"/>
-                                        <stop offset="0.51" stop-color="#0c6fff"/>
-                                        <stop offset="0.71" stop-color="#104fff"/>
-                                        <stop offset="0.91" stop-color="#1325ff"/>
-                                        <stop offset="1" stop-color="#1610ff"/>
-                                        </linearGradient>
-                                    </defs>
-                                    <g id="TOPA_Icones_TOPA_Icones_02-User" transform="translate(-62.44 -62.343)">
-                                        <path id="Tracé_88" data-name="Tracé 88" d="M98.146,80.137A17.853,17.853,0,1,1,80.315,62.345c9.571-.148,18.1,8.113,17.832,17.792ZM80.423,96.467a16.154,16.154,0,0,0,16.17-16.218,15.951,15.951,0,0,0-16.3-16.305,16.262,16.262,0,1,0,.133,32.523Z" transform="translate(0 0)" fill="url(#linear-gradient)"/>
-                                        <path id="Tracé_89" data-name="Tracé 89" d="M146,129.617a15.778,15.778,0,0,1-3.629,10.7c-.23.287-.485.736-.883.646-.48-.108-.28-.639-.336-.991a10.256,10.256,0,0,0-20.233-.413c-.078.469.038,1.18-.466,1.3-.465.11-.777-.536-1.1-.893-4.294-4.743-4.553-12.788-.6-18.252a15,15,0,0,1,16.832-5.56c6.225,2.006,10.411,7.77,10.418,13.464Zm-15.082.1a5.218,5.218,0,0,0,5.435-5.307,5.32,5.32,0,0,0-5.281-5.509,5.409,5.409,0,1,0-.154,10.816Z" transform="translate(-50.682 -50.271)" fill="url(#linear-gradient-2)"/>
-                                    </g>
-                                </svg>
+                                <button type="button" className='btn-svg'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35.713" height="35.74" viewBox="0 0 35.713 35.74" className='svg-icon'>
+                                        <defs>
+                                            <linearGradient id="linear-gradient" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+                                            <stop offset="0" stop-color="#00c4ff"/>
+                                            <stop offset="1" stop-color="#1800ff"/>
+                                            </linearGradient>
+                                            <linearGradient id="linear-gradient-2" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+                                            <stop offset="0" stop-color="#099aff"/>
+                                            <stop offset="0.15" stop-color="#0995ff"/>
+                                            <stop offset="0.33" stop-color="#0a87ff"/>
+                                            <stop offset="0.51" stop-color="#0c6fff"/>
+                                            <stop offset="0.71" stop-color="#104fff"/>
+                                            <stop offset="0.91" stop-color="#1325ff"/>
+                                            <stop offset="1" stop-color="#1610ff"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <g id="TOPA_Icones_TOPA_Icones_02-User" transform="translate(-62.44 -62.343)">
+                                            <path id="Tracé_88" data-name="Tracé 88" d="M98.146,80.137A17.853,17.853,0,1,1,80.315,62.345c9.571-.148,18.1,8.113,17.832,17.792ZM80.423,96.467a16.154,16.154,0,0,0,16.17-16.218,15.951,15.951,0,0,0-16.3-16.305,16.262,16.262,0,1,0,.133,32.523Z" transform="translate(0 0)" fill="#1800FF"/>
+                                            <path id="Tracé_89" data-name="Tracé 89" d="M146,129.617a15.778,15.778,0,0,1-3.629,10.7c-.23.287-.485.736-.883.646-.48-.108-.28-.639-.336-.991a10.256,10.256,0,0,0-20.233-.413c-.078.469.038,1.18-.466,1.3-.465.11-.777-.536-1.1-.893-4.294-4.743-4.553-12.788-.6-18.252a15,15,0,0,1,16.832-5.56c6.225,2.006,10.411,7.77,10.418,13.464Zm-15.082.1a5.218,5.218,0,0,0,5.435-5.307,5.32,5.32,0,0,0-5.281-5.509,5.409,5.409,0,1,0-.154,10.816Z" transform="translate(-50.682 -50.271)" fill="#1800FF"/>
+                                        </g>
+                                    </svg>
+                                </button>
                             </li>
                         </ul>
                     </div>
