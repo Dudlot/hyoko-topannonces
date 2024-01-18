@@ -1,55 +1,30 @@
-// Transformer l'app en serveur pour pouvoir faire des requêtes HTTP -> Importer Express
-const express = require("express");
-// Fonction Node pour créer un chemin d'accès
-const path = require('path');
-// Appel de MySQL
-const mysql = require("mysql");
-// Appel de CORS
+const express = require("express"); // Transformer l'app en serveur pour pouvoir faire des requêtes HTTP -> Importer Express
+const path = require('path'); // Fonction Node pour créer un chemin d'accès
+const morgan = require("morgan");
 const cors = require("cors");
+const sequelize = require("./src/db/sequelize");
 
-
-// Initier variable 'app' dans express.js
-const app = express();
+const app = express(); // Initier variable 'app' dans express.js
 
 // Récupérer les fichiers
 require('dotenv').config({ path: path.resolve(__dirname, './.env') });
 
-
-// CONNEXION À LA BDD
-app.get("/", cors({ origin: ["http://localhost:8000", "http://localhost:5173"], 
-					credentials: true,
-					allowedHeaders: ["sessionId", "Content-Type"],
-					exposedHeaders: ["sessionId"],
-					methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-					preflightContinue: false,
-				}), (req, res) => {
-	// Connexion à une bdd
-	const dbConnexion = mysql.createConnection({
-	    host: 'localhost',
-	    user: 'root',
-	    password: 'root',
-	    database: 'topannonces',
-	    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
-	});
-	dbConnexion.connect((err) => {
-	    if(err){
-	        console.log("Database connexion error : " + err.stack)
-	        return;
-	    }
-	    console.log("Database connexion established.")
-	});
-
-	// Récupération des données en json sur navigateur
-	dbConnexion.query("SELECT * FROM topa_posts", (err, rows, fields) => {
-	    if(err) throw err;
-	    res.json(rows)
-	});
-
-	module.exports = dbConnexion;
-    dbConnexion.end();
-});
-
+app.use(morgan('dev'));
 app.use(cors());
+
+sequelize.initDb()
+// Ici, nous placerons nos futurs points de terminaison.
+require("./src/routes/adds/findAllAdds")(app)
+require("./src/routes/adds/findSingleAdd")(app)
+require("./src/routes/adds/createAdd")(app)
+require("./src/routes/adds/updateAdd")(app)
+require("./src/routes/adds/deleteAdd")(app) //  // Raccourci de syntaxe
+
+// Gestion des erreurs 404
+app.use(({res})=> {
+    const message = 'Impossible de trouver la ressource demandée ! Vous pouvez essayer une autre URL.'
+    res.status(404).json({message})
+})
 
 // Accueillir des requêtes côté client (HTTP) sur le port 8000
 app.listen(process.env.PORT, () => {
