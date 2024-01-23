@@ -19,6 +19,7 @@ require("./src/routes/adds/findSingleAdd")(app)
 require("./src/routes/adds/createAdd")(app)
 require("./src/routes/adds/updateAdd")(app)
 require("./src/routes/adds/deleteAdd")(app) //  // Raccourci de syntaxe
+require("./src/routes/login")(app)
 
 // Gestion des erreurs 404
 app.use(({res})=> {
