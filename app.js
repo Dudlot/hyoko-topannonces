@@ -6,7 +6,9 @@ const sequelize = require("./src/db/sequelize");
 const app = express(); // Initier variable 'app' dans express.js
 
 // Récupérer les fichiers
-require('dotenv').config({ path: path.resolve(__dirname, './.env') });
+//require('dotenv').config({ path: path.resolve(__dirname, './.env') });
+
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 
