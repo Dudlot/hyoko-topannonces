@@ -32,6 +32,6 @@ app.use(({res})=> {
 })
 
 // Accueillir des requêtes côté client (HTTP) sur le port 8000
-app.listen(process.env.PORT, () => {
-    console.log(`Serveur listening on port ${process.env.PORT}`);
+app.listen(port, () => {
+    console.log(`Serveur listening on port ${port}`);
 });
