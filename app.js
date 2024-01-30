@@ -1,16 +1,20 @@
-const express = require("express"); // Transformer l'app en serveur pour pouvoir faire des requêtes HTTP -> Importer Express
-const path = require('path'); // Fonction Node pour créer un chemin d'accès
-const cors = require("cors");
-const sequelize = require("./src/db/sequelize");
+const express = require("express")
+//const favicon = require('serve-icon') // Transformer l'app en serveur pour pouvoir faire des requêtes HTTP -> Importer Express
+//const path = require('path')  Fonction Node pour créer un chemin d'accès
+const bodyParser = require('body-parser')
+//const cors = require("cors")
+const sequelize = require("./src/db/sequelize")
 
-const app = express(); // Initier variable 'app' dans express.js
+const app = express() // Initier variable 'app' dans express.js
 
 // Récupérer les fichiers
 //require('dotenv').config({ path: path.resolve(__dirname, './.env') });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000
 
-app.use(cors());
+//app
+    //.use(cors()))
+    //.use(favicon(__dirname + '/favicon.ico'))
 
 sequelize.initDb()
 
