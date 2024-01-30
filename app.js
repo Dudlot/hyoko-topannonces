@@ -10,7 +10,7 @@ const app = express() // Initier variable 'app' dans express.js
 // Récupérer les fichiers
 //require('dotenv').config({ path: path.resolve(__dirname, './.env') });
 
-//const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000
 app.listen(process.env.PORT || 3000)
 
 //app
