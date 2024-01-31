@@ -51,6 +51,7 @@ const initDb = () => {
 		bcrypt.hash('HopeEternal74@', 10) // plus le nombre est grand plus le temps de hachage l'est aussi 
 		.then(hash => {
 			User.create({
+				username: 'Dudlot',
 				firstname:'Charlotte',
 				lastname: 'Dunand',
 				email:'charlotte@hyoko.ch',
