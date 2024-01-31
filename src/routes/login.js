@@ -5,7 +5,7 @@ const jwt = require('../auth/private_key')
 module.exports = (app) => {
     app.post('/api/login', (req,res) => {
 
-        User.findOne({ where: { email: req.body.email } }).then(user => {
+        User.findOne({ where: { username: req.body.username } }).then(user => {
 
             if(!user) {
                 const message = `L'utilisateur demandé n'exsite pas.`
