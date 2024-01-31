@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "topannonces",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "p290fnqids11b7fv",
+    "password": "encwrrqkv6ch0te6",
+    "database": "qaixeeazf3rwdhr2",
+    "host": "ao9moanwus0rjiex.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mariadb"
+  }
+}
