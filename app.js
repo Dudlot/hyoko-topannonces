@@ -7,10 +7,16 @@ const sequelize = require('./src/db/sequelize')
 const app = express()
 const port = process.env.PORT || 3000
 
+
+const corsOptions = {
+  origin: 'http://localhost:5173/', // Remplacez par l'URL de votre application React
+  optionsSuccessStatus: 200 // Certains navigateurs interprètent mal les retours CORS, cela peut aider
+};
+
 app
 //.use(favicon(__dirname + '/favicon.ico'))
 .use(bodyParser.json())
-.use(cors())
+.use(cors(corsOptions))
 
 sequelize.initDb()
 
