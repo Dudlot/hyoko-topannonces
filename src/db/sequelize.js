@@ -1,8 +1,8 @@
 const {Sequelize, DataTypes} = require('sequelize')
+const bcrypt = require('bcryptjs')
 const AddModel = require('../models/add')
 const UserModel = require('../models/user')
 const adds = require('./mock-adds')
-const bcrypt = require('bcryptjs')
 
 let sequelize
 if(process.env.NODE_ENV === 'production') {
@@ -38,7 +38,7 @@ const Add = AddModel(sequelize, Sequelize.DataTypes) // Synchroniser la BDD avec
 const User = UserModel(sequelize, Sequelize.DataTypes)
 
 const initDb = () => {
-    return sequelize.sync() .then(_ => {
+    return sequelize.sync().then(_ => {
 		adds.map(add => {
 			Add.create({
 				title: add.title,
