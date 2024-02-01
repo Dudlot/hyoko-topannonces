@@ -38,7 +38,7 @@ const Add = AddModel(sequelize, Sequelize.DataTypes) // Synchroniser la BDD avec
 const User = UserModel(sequelize, Sequelize.DataTypes)
 
 const initDb = () => {
-    return sequelize.sync({ force: true }).then(_ => {
+    return sequelize.sync().then(_ => {
 		adds.map(add => {
 			Add.create({
 				title: add.title,
